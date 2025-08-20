@@ -1,0 +1,6 @@
+databaseChangeLog:
+  - changeSet:
+      id: migrations
+      author: AyselS
+  - include:
+      file: db.changelog/changeset/create-loans.sql

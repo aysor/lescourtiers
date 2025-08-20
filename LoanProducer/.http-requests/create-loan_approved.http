@@ -1,0 +1,11 @@
+POST http://localhost:8081/api/loans/create HTTP/1.1
+Content-Type: application/json
+
+{
+  "amount":400000,
+  "term": 18,
+  "income":500000,
+  "dsti": 0.01,
+  "rating":7
+}
+
