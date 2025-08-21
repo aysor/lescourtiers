@@ -15,9 +15,6 @@ import org.springframework.core.env.Environment;
 public class RabbitMQConfig {
     public static String QUEUE_CONFIG = "spring.rabbitmq.queue-name";
 
-    /*@Value("${s/*pring.rabbitmq.queue-name}")
-    public static String RABBIT_QUEUE_NAME;*/
-
     private final Environment environment;
 
     @Bean

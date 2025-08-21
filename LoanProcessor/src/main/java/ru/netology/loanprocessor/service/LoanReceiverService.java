@@ -30,7 +30,7 @@ public class LoanReceiverService {
         try {
             approved = loanCalculator.approved(loanEvent);
         }catch (NumberFormatException ex){
-            System.out.println("Incorrect data?");
+            System.out.println("Incorrect data? " + ex);
         }
 
         String message = approved ? "approved" : "declined";

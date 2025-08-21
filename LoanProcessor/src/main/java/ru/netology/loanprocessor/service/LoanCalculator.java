@@ -15,7 +15,7 @@ public class LoanCalculator {
 
     @PostConstruct
     private void init(){
-        System.out.println("*******" + rate);
+        System.out.println("!!!!! rate: " + rate);
         loanMonthRate = new BigDecimal(Double.parseDouble(rate) / 12);
     }
 

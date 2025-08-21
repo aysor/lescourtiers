@@ -54,7 +54,7 @@ services:
       POSTGRES_USER: "netology_user"
       POSTGRES_PASSWORD: "111"
       POSTGRES_DB: "loansregistry"
-
+    build: ./
 
   loanproducer:
     image: 'loanproducer:1.0'
@@ -68,7 +68,7 @@ services:
     environment:
       DATABASE_URL: "postgresql://netology_user:111@preload:5432/loansregistry"
 
-    build: ./
+    build: ./LoanProducer
 
   loanprocessor:
     image: 'loanprocessor:1.0'
@@ -78,4 +78,4 @@ services:
     depends_on:
       - rabbitmq
       - kafka
-    build: ./
+    build: ./LoanProcessor

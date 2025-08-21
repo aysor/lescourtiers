@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import ru.netology.loanproducer.dto.LoanDto;
 import ru.netology.loanproducer.service.LoanProducerService;
 
-//@Slf4j
 @RestController
 @RequestMapping("/api/loans")
 @RequiredArgsConstructor
