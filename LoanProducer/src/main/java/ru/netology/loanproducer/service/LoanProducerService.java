@@ -49,18 +49,22 @@ public class LoanProducerService {
         String[] data = response.split(":");
         Long loanId = Long.parseLong(data[0]);
         String status = data[1];
-        System.out.println("Received message: " + response);
+        System.out.println("!!!!! Received message: " + response);
         loanRepository.updateStatus(status, loanId);
     }
 
     private void sendLoan(LoanDto loanDto){
         LoanSendEvent loanSendEvent = modelMapper.map(loanDto, LoanSendEvent.class);
+        System.out.println("!!!!! Sending to KAFKA loan with amount: " + loanDto.getAmount());
         kafkaTemplate.send(sendClientTopic, loanSendEvent);
+        System.out.println("!!!!! SENT.");
     }
 
     private LoanEntity saveToDb(LoanDto loanDto){
         LoanEntity entity = loanToEntity(loanDto, "processing");
+        System.out.println("!!!!! Saving to DB loan with amount: " + entity.getAmount());
         LoanEntity saved = loanRepository.save(entity);
+        System.out.println("!!!!! Saved.");
         return saved;
     }
 

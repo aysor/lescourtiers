@@ -18,7 +18,7 @@ public class LoanController {
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.OK)
     public Long createLoan(@RequestBody LoanDto loanDto){
-        //log.info("Send order to kafka");
+        System.out.println("!!!!! Controller caught loan with amount: " + loanDto.getAmount());
         Long result = loanService.createLoan(loanDto);
         return result;
     }

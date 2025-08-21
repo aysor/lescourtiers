@@ -23,8 +23,8 @@ public class LoanReceiverService {
             , groupId = kafkaConsumerGroupId
             , properties = {"spring.json.value.default.type=ru.netology.loanprocessor.event.LoanEvent"})
     public LoanEvent createLoan(LoanEvent loanEvent) {
-        System.out.println("Caught!");
-        System.out.println("Calculating...");
+        System.out.println("!!!!! Caught loan with id: " + loanEvent.getId());
+        System.out.println("!!!!! Calculating...");
 
         boolean approved = false;
         try {
